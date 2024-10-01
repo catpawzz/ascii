@@ -1,0 +1,147 @@
+body {
+    background-color: #110d17;
+    font-family: Quicksand, monospace;
+    margin: 0px;
+    padding: 0px;
+    color: #f2f2f2;
+}
+
+.header {
+    background-color: #14101b;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  #navbar {
+    overflow: hidden;
+    background-color: #14101b;
+    border-bottom: 1px solid #362842;
+  }
+  
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.5s;
+  }
+  
+  #navbar a:hover {
+    background-color: #522b5c;
+    color: white;
+    transition: 0.5s;
+  }
+  
+  #navbar a.active {
+    background-color: #522b5c;
+    color: white;
+    transition: 0.5s;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+  ::-moz-selection { /* Code for Firefox */
+    color: #d494f8;
+    background: #2d2038
+    }
+    
+    ::selection {
+      color: #d494f8;
+      background: #2d2038
+    }
+
+    p {
+        font-size: 25px;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        color: #c9a8e7;
+    }
+
+    li {
+        font-size: 22px;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    .bbottom {
+        border-bottom: 1px solid #362842;
+    }
+
+    .emoji{
+        max-height: 20px;
+    }
+
+    .emoji2{
+        max-height: 35px;
+    }
+
+    .space {
+        height: 200px;
+    }
+
+    a{
+        text-decoration: none;
+        color: #c9a8e7;
+        transition: 0.5s;
+    }
+
+    a:hover{
+        text-decoration: none;
+        color: #815aa5;
+        transition: 0.5s;
+    }
+
+    li.biglist{
+        margin: 5px;
+    }
+
+    .alive {
+      color: #a5f894;
+    }
+
+    .alive:hover {
+      color: #a5f894;
+    }
+
+    .dead {
+      color: #f89494;
+    }
+
+    .dead:hover {
+      color: #f89494;
+    }
+
+    .suspended {
+      color: #f8e194;
+    }
+
+    .suspended:hover {
+      color: #f8e194;
+    }
+
+    .eol {
+      color: #94dcf8;
+    }
+
+    .eol:hover {
+      color: #94dcf8;
+    }
