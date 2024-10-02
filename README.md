@@ -25,3 +25,6 @@ We use [GIT](https://git-scm.com/) for versioning and code review.
 This project is licensed under the [BSD-3](LICENSE)
 CLAUSE LICENSE - see the [LICENSE.md](LICENSE) file for
 details
+
+## Repobeats
+![Alt](https://repobeats.axiom.co/api/embed/35825f20f9d8de54aae71fb7075029519f1b0916.svg "Repobeats analytics image")
