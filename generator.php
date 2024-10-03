@@ -355,7 +355,7 @@
             img = new Image();
             img.crossOrigin = "Anonymous"; // Handle CORS issues
             img.onload = () => renderArt(parseInt(document.getElementById('sizeSlider').value), parseInt(document.getElementById('intensitySlider').value));
-            img.onerror = () => alert("Failed to load image. Please check the URL and try again.");
+            img.onerror = () => showNotificationE("The image could not be loaded! Make sure the URL is correct and the image is accessible. (this also might be a CORS issue)");
             img.src = imageUrl;
         }
 
