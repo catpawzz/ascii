@@ -60,7 +60,7 @@
 
         .slider-container {
             margin-top: 20px;
-            width: 300px;
+            
         }
 
         .slider-container label {
@@ -72,6 +72,48 @@
             width: 100%;
             border-radius: 15px;
         }
+
+        .slider-container {
+        margin: 20px 0;
+    }
+
+    input[type="range"] {
+        -webkit-appearance: none; 
+        width: 100%;
+        height: 10px; 
+        border-radius: 5px;
+        background: #0c111d; 
+        border: 1px solid #323B4EFF; 
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none; 
+        appearance: none;
+        width: 20px; 
+        height: 20px; 
+        border-radius: 50%; 
+        background: #8490AAFF; 
+        border: 1px solid #323B4EFF; 
+        cursor: pointer; 
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #8490AAFF;
+        border: 1px solid #323B4EFF;
+        cursor: pointer;
+    }
+
+    input[type="range"]::-ms-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #8490AAFF;
+        border: 1px solid #323B4EFF;
+        cursor: pointer;
+    }
 
         canvas {
             display: none;
@@ -127,7 +169,8 @@
                 <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl flex items-center">
                     Image to dot generator
                 </h1>
-                <p class="mt-6 text-lg leading-8 text-gray-300">Generate ASCII art from your own images!</p>
+                <p class="mt-6 text-lg leading-8 text-gray-300">Generate ASCII art from your own images! The images are processed within your browser, and not uploaded to anywhere :3</p>
+                <p class="mt-6 text-lg leading-8 text-purple-300">v0.0.2</p>
                 <div class="mt-10 flex items-center gap-x-6">
                     <a href="https://fembois.eu" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Home</a>
                     <a href="/" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Back</a>
@@ -142,9 +185,15 @@
             Drag & drop an image here or click to upload!
         </div>
 
+        <div class="url-input-container">
+        <input type="text" id="imageUrlInput" placeholder="Enter image URL" style="width: 80%; padding: 10px; border-radius: 15px; border: 1px solid #323B4EFF; background-color: #0c111d; color: white;">
+
+            <button onclick="loadImageFromUrl()" style="padding: 10px 20px; border-radius: 15px; border: 1px solid #323B4EFF; background-color: #0C111DFF; color: white; cursor: pointer;">Load image from URL</button>
+        </div>
+
         <input type="file" id="imageInput" accept="image/*" style="display:none" onchange="generateArt()">
         <button id="regenerateBTN" onclick="generateArt()">Regenerate (be careful!)</button>
-        <p class="description">If you selected a size that's too big, the page might freeze! Don't say I didn't warn you >:3</p>
+        <p class="description" style="margin-top: 5px;">If you selected a size that's too big, the page might freeze! Don't say I didn't warn you >:3</p>
 
         <div class="slider-container">
             <label for="sizeSlider">Output Size (Scale): <span id="sizeValue">12</span></label>
@@ -166,6 +215,7 @@
 
         <h3 style="margin: 0; padding: 0;padding-top: 30px;">Copy as other:</h3>
         <button id="copyBtnRAW" onclick="copyToClipboardRAW()">RAW</button>
+        <button id="copyBtnURL" onclick="copyCurrentUrl()">URL</button>
     </div>
 
     <canvas id="canvas"></canvas>
@@ -189,19 +239,47 @@
         updateIntensityValue(thresholdParam);
     }
 
-    const imageUrlParam = urlParams.get('imageUrl');
-
+    const imageUrlParam = urlParams.get('url');
     if (imageUrlParam) {
-        img = new Image();
-        img.crossOrigin = "*"; // Handle CORS if needed
-        img.onload = () => {
-            renderArt(
-                parseInt(document.getElementById('sizeSlider').value),
-                parseInt(document.getElementById('intensitySlider').value)
-            );
-        };
-        img.src = imageUrlParam; // Directly using the image URL from the parameter
+        document.getElementById('imageUrlInput').value = imageUrlParam;
+        loadImageFromUrl();
     }
+
+    function copyCurrentUrl() {
+        const size = document.getElementById('sizeSlider').value;
+        const threshold = document.getElementById('intensitySlider').value;
+        const imageUrl = document.getElementById('imageUrlInput').value;
+
+        if (!imageUrl) {
+            alert("You can only share an URL if your image was loaded from an URL!");
+            return;
+        }
+
+        const currentUrl = `${window.location.origin}${window.location.pathname}?size=${size}&threshold=${threshold}&url=${encodeURIComponent(imageUrl)}`;
+        
+        const tempTextarea = document.createElement("textarea");
+        tempTextarea.value = currentUrl;
+        document.body.appendChild(tempTextarea);
+        tempTextarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempTextarea);
+
+        alert("URL copied to clipboard!");
+    }
+
+    function loadImageFromUrl() {
+            const imageUrl = document.getElementById('imageUrlInput').value;
+            if (!imageUrl) {
+                alert("Please enter a valid image URL.");
+                return;
+            }
+
+            img = new Image();
+            img.crossOrigin = "Anonymous"; // Handle CORS issues
+            img.onload = () => renderArt(parseInt(document.getElementById('sizeSlider').value), parseInt(document.getElementById('intensitySlider').value));
+            img.onerror = () => alert("Failed to load image. Please check the URL and try again.");
+            img.src = imageUrl;
+        }
 
     function generateArt() {
         const fileInput = document.getElementById('imageInput');
