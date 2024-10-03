@@ -211,7 +211,6 @@
                 <p class="mt-6 text-lg leading-8 text-gray-300">Generate ASCII art from your own images! The images are processed within your browser, and not uploaded to anywhere :3</p>
                 <p class="mt-6 text-lg leading-8 text-purple-300">v0.0.3</p>
                 <div class="mt-10 flex items-center gap-x-6">
-                    <a href="https://fembois.eu" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Home</a>
                     <a href="/" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Back</a>
                 </div>
             </div>

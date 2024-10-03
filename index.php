@@ -79,6 +79,7 @@
           ASCII art for your code
         </h1>
         <p class="mt-6 text-lg leading-8 text-gray-300">Get the ASCII art I've used in my Tik Tok's here or use the generator!</p>
+        <p class="mt-6 text-lg leading-8 text-gray-300">The images I use here are from my own big collection of boykisser pictures, if you see one that you drew, please contact me to get the attribution you deserve, or to get it removed!</p>
         <div class="mt-10 flex items-center gap-x-6">
           <a href="https://fembois.eu" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Home</a>
           <a href="/generator" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Generator</a>
@@ -121,6 +122,11 @@
           <h3 class="text-xl font-bold text-white mb-2">Boikisser</h3>
             <img src="preview/01.png" alt="Description of image" class="w-full h-auto rounded-md mb-4">
           <a href="generator?size=14&threshold=128&url=templates%2F01.jpg" class="mt-4 inline-block rounded-md bg-purple-900 px-3.5 py-2.5 mt-2 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Open Link</a>
+        </div>
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-bold text-white mb-2">Boikisser 2</h3>
+            <img src="preview/02.png" alt="Description of image" class="w-full h-auto rounded-md mb-4">
+          <a href="generator?size=14&threshold=142&url=templates%2F02.png" class="mt-4 inline-block rounded-md bg-purple-900 px-3.5 py-2.5 mt-2 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Open Link</a>
         </div>
     </div>
   </div>
