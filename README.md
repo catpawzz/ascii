@@ -10,6 +10,7 @@ These are just some ASCII art collections from my tik toks and other random stuf
     the license
   - [PHP](https://www.php.net/) - Used for general code
   - [HTML, CSS and JS](https://www.w3schools.com/html/) - Used for general content, styling and logic
+  - [TailWindCSS](https://tailwindcss.com) - Framework for designing
 
 ## Versioning
 
