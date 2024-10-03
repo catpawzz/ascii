@@ -9,11 +9,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;display=swap" rel="stylesheet">
     <link href="src/styles/output.css" rel="stylesheet">
 
-    <meta name="description" content="Generate some ASCII art from an uploaded image!">
+    <meta name="description" content="Generate some ASCII art from an uploaded image or an image url!">
     <meta name="author" content="Catpawz">
     <meta content="#A443D1" data-react-helmet="true" name="theme-color">
-    <meta property="og:image" content="favicon.png">
+    <meta property="og:image" content="https://ascii.fembois.eu/favicon.png">
     <style>
+        /*
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠸⢬⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡺⠁⠀⠍⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡸⠆⠁⠀⠂⢵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡺⠁⠀⠀⠀⠂⠭⡐⠀⠀⠀⠀⢠⠰⣐⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⠀⠀⠀⠂⢵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡺⠁⠀⠀⠀⠀⠀⠀⠋⣔⠀⠀⠀⣾⠀⠀⠂⠋⠬⢰⡀⠀⠀⠀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠂⢵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣪⠁⠀⠀⠀⠀⠀⢠⠸⠜⠎⠍⠌⠬⠿⠀⠀⠀⠀⠀⠀⠃⠭⣐⡺⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⣔⠀⠀⠀⠀⠀⠀⠀⠀⠀               This boikisser is angy
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠕⠀⠀⠀⠀⠀⠀⠂⢥⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⠴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⡐⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠴⣐⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⣨⣀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣵⠀⠀⠀⠀⠀                      because you're either looking at this code
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣮⢷⢯⡎⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢫⠀⠀⠀⠀⠀⠀⠀⠀   
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⠅⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣪⠀⠀⠀⠀⠀⠀⠀                       for fun, or because you're trying
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⣕⠀⠀⠀⠀⠀⠀⢰⠰⢰⣐⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣰⠸⠜⢮⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀                      to steal it. Either way, I'm watching you.
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⣐⠀⠀⠀⠀⠀⡞⠀⢀⣿⣿⣿⣿⡛⠄⠀⠀⠀⠀⠀⢯⣿⣿⣿⣿⡔⠀⠂⣕⠀⠀⠀⠀⠀⢀⡀⢀⡸⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡞⠂⠅⠀⠀⠀⠀⡕⠀⢪⣿⣿⣿⣿⡕⠀⠀⠀⠀⠀⠀⢪⣿⣿⣿⣿⡕⠀⠀⢫⠀⠀⠀⠀⠀⠀⠃⠯⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠀⠀⠀⠀⠀⠀⠀⡕⠀⠊⣿⣿⣿⣿⡕⠀⠀⠀⠀⠀⠀⠪⣿⣿⣿⣿⡕⠀⠀⣺⠀⠀⠀⠀⠀⠀⠀⠀⠂⢭⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠥⡀⠀⠀⠀⠀⠀⢫⡀⠀⠋⠿⠿⠏⠁⠀⠀⠀⠀⠀⠀⠀⠋⠟⠏⠏⠅⠀⠂⠁⠀⠀⠀⠀⠀⠀⠀⢀⡸⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⢭⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣰⠸⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡜⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡺⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⠰⢰⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠗⢀⣀⣀⣺⡴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠾⣰⣀⣀⡀⠀⠬⣐⠀⠀⠀⠀⠀⠀⠀⠊⠃⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠐⠀⠀⠀⢀⣀⡿⠀⣀⣠⣰⣐⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠸⠌⠌⠌⠌⠴⣐⠀⠀⠀⠀⠂⠃⠃⠃⠃⠋⠴⣐⢠⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠸⠎⠋⠍⠌⠏⠃⠃⠀⣨⠇⡕⠀⠀⢀⡔⠃⠍⢴⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠇⠀⢨⡀⠀⠀⢨⡕⠂⠭⡐⠀⠀⠀⠀⠀⣠⠜⠮⡓⠏⠹⣼⣿⣿⣴⠀⠀⠀⠀⠀⠀⠈⠎⠇⠋⠍⠬⢐⡀⠀⠀⠀⠀⠀⣺⠁⠀⢁⣀⣀⣊⠅⠀⠀⣠⢭⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡕⣀⠀⠀⢁⣠⡰⠰⣐⠀⠀⠫⡐⠀⠀⠀⡺⠁⠀⣼⣟⣽⣤⣺⣿⣿⣿⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⣔⠀⠀⠀⢨⠕⠀⠈⣗⠀⠀⠂⠃⠭⡐⠅⠀⣕⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⡕⠂⠁⣸⠇⠀⠀⠀⣪⠀⠀⠀⢫⡀⠀⠨⠅⠀⠊⠏⠯⢻⣿⣿⣿⣿⡟⠋⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⣕⠀⠀⡟⠀⠀⠀⠂⠏⠬⠴⠰⠼⠅⠀⠀⣿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠫⡐⠀⠂⠬⠼⠜⠇⠁⠀⠀⠀⠀⢭⡀⠁⠀⠀⠀⠀⠀⠊⠿⣿⡿⠗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⠀⠀⠀⢪⡐⣪⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡕⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠫⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠂⠄⢰⡰⠰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⡀⠀⠀⠀⢷⠕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡞⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢯⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡑⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⡕⠀⠀⠀⠎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⠋⣔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢭⠀⠀⠀⠀⠀⠀⠐⠀⣠⣸⡿⠁⢀⣺⣿⡜⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣪⠁⠀⠂⢵⡀⢨⢴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠅⠀⠀⣀⣀⣰⣸⣾⣿⠗⠀⢀⣾⣿⣿⣰⡺⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠕⠀⠀⠀⠀⢭⣿⠂⢵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠌⣾⣿⣿⣿⣿⣿⠅⠀⣾⣿⣿⣿⣻⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡗⠀⠀⠀⠀⠀⠀⠿⠀⠂⣕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡿⠁⠀⣨⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⡭⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠪⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⠋⠀⠋⠃⣫⣿⣿⣿⠁⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠪⡕⠂⠋⠬⠰⣰⣰⣰⡰⠰⠜⠇⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢽⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣈⣾⣿⣿⣿⠿⠇⠊⠫⣼⣾⣿⣿⡿⠟⢪⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⢠⠕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠃⠃⠃⠃⠀⠀⠀⠀⠃⠃⠃⠁⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+*/
+
+
         .container {
             text-align: center;
             margin: 20px;
@@ -60,7 +99,7 @@
 
         .slider-container {
             margin-top: 20px;
-            
+
         }
 
         .slider-container label {
@@ -74,46 +113,46 @@
         }
 
         .slider-container {
-        margin: 20px 0;
-    }
+            margin: 20px 0;
+        }
 
-    input[type="range"] {
-        -webkit-appearance: none; 
-        width: 100%;
-        height: 10px; 
-        border-radius: 5px;
-        background: #0c111d; 
-        border: 1px solid #323B4EFF; 
-    }
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: #0c111d;
+            border: 1px solid #323B4EFF;
+        }
 
-    input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: none; 
-        appearance: none;
-        width: 20px; 
-        height: 20px; 
-        border-radius: 50%; 
-        background: #8490AAFF; 
-        border: 1px solid #323B4EFF; 
-        cursor: pointer; 
-    }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #8490AAFF;
+            border: 1px solid #323B4EFF;
+            cursor: pointer;
+        }
 
-    input[type="range"]::-moz-range-thumb {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #8490AAFF;
-        border: 1px solid #323B4EFF;
-        cursor: pointer;
-    }
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #8490AAFF;
+            border: 1px solid #323B4EFF;
+            cursor: pointer;
+        }
 
-    input[type="range"]::-ms-thumb {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #8490AAFF;
-        border: 1px solid #323B4EFF;
-        cursor: pointer;
-    }
+        input[type="range"]::-ms-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #8490AAFF;
+            border: 1px solid #323B4EFF;
+            cursor: pointer;
+        }
 
         canvas {
             display: none;
@@ -170,7 +209,7 @@
                     Image to dot generator
                 </h1>
                 <p class="mt-6 text-lg leading-8 text-gray-300">Generate ASCII art from your own images! The images are processed within your browser, and not uploaded to anywhere :3</p>
-                <p class="mt-6 text-lg leading-8 text-purple-300">v0.0.2</p>
+                <p class="mt-6 text-lg leading-8 text-purple-300">v0.0.3</p>
                 <div class="mt-10 flex items-center gap-x-6">
                     <a href="https://fembois.eu" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Home</a>
                     <a href="/" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Back</a>
@@ -179,6 +218,39 @@
         </div>
     </div>
 
+    <!--⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢠⠞⠍⠌⠰⢐⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⠟⠀⠀⠀⠀⠀⠂⠋⠤⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠰⠌⠆⠃⠃⢕⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠴⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠘⠆⠁⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⢪⠃⠋⠌⠌⠌⠤⠰⠲⣽⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠃⠬⣐⠀⠀⢀⡰⠜⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⡐⠀⠀⠀⠀⠀⠀         Meow meow
+⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠃⠌⠌⠰⠰⣀⣀⠀⢪⠀⠀⠂⠭⣘⠃⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢨⠁⣀⡀⠀⠀⠪⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠃⢯⠀⠀⠀⠀⠂⠭⠜⠇⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀             I'm sure y'all have seen the tik tok for this
+⠀⠀⠀⠀⠀⢪⠿⠱⠰⠰⢰⣀⣵⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠺⠰⣀⡀⠀⠀⠀⢀⣀⣀⣀⣀⠀⢪⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠊⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⠌⠎⠃⠇⠃⠁⠀⠀⠀⠂⡕⠊⡔⠀⠀⠀⠀⠀                 or maybe you're looking at it right now :3
+⠀⠀⠀⠀⠀⠀⣕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠁⠀⡕⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠏⠿⡕⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠂⣔⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡪⠂⠉⠬⣵⣀⠀⠀⠀⠀
+⠀⣀⡠⠸⠌⠆⠃⠩⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠅⠀⠀⠀⠀⠂⠃⠌⠬⠐
+⢾⠁⠀⠀⠀⠀⠀⠀⢩⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠨⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠕⠀⠀⠀⠀⠀⠀⠀⠀⢀⠕
+⠀⠩⡀⠀⠀⠀⠀⠀⠀⢋⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⢴⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠁⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⢠⠔⠀⠀⠀⠀⠀⠀⠀⠀⢀⠖⠀
+⠀⠀⠊⢔⠀⠀⠀⠊⠯⢳⣀⠈⠌⡜⠆⠃⠃⠃⠃⣿⣿⣿⣿⡕⠋⠴⣀⣀⣂⠃⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠃⡗⠁⠀⠠⣕⠀⠀⠀⠀⠀⠀⠀⠀⣠⠖⠀⠀
+⠀⠀⠀⠂⠭⡀⠀⠀⠀⠀⠂⠁⠀⢥⠀⠀⠀⠀⠀⠊⣿⣿⣿⠕⠀⠀⠀⠀⠀⠀⠪⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⢪⠁⠀⠀⢀⡲⠏⠀⠀⠀⠀⠀⢀⡸⠁⠀⠀⠀
+⠀⠀⠀⠀⠀⠂⢤⡀⠀⠀⠀⠀⠀⠂⣴⡀⠀⠀⠀⠀⠊⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠋⠿⠟⠁⠀⠀⣰⡀⠀⣠⠅⠀⠀⠀⠁⠀⠀⠀⠀⠀⢀⠸⠇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠋⠤⣐⠀⠀⠀⡺⠁⠃⢀⡀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⢪⠃⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⣠⠘⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⣬⡐⠊⢴⣸⡿⠀⠀⠀⠀⠊⣔⣀⡰⠜⠬⠰⠰⠰⠌⠎⠃⠀⠀⢠⣐⠀⣕⡀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢼⣃⣁⠀⠀⠀⠃⠍⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠯⣿⠇⢁⡀⠀⠀⠀⠀⠀⠀⠀⣃⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠃⠃⠍⠌⠌⠌⠎⣧⠼⠬⢴⣀⣠⣐⣀⣀⣀⣰⡰⠀⣀⣀⠰⠼⢟⣍⣃⣁⣀⣀⣀⠰⠰⠘⠌⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣺⠂⠫⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠘⣟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⢸⠎⠃⢊⡰⡐⠂⠉⢴⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⢴⣪⢋⠜⢰⣐⡀⠀⠀⣀⠰⠘⠎⠃⠀⠂⡕⢠⣾⡕⠀⣀⡰⠞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡛⢪⠀⠀⠀⠃⠋⠃⠀⠀⠀⠀⠀⠀⠀⢩⠃⠃⢭⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠅⡚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⡔⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡚⢀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠪⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠅⣪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢡⠀⠀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+-->
+
     <div class="container mx-auto px-6 py-10 text-center">
 
         <div class="drop-zone" id="dropZone" onclick="document.getElementById('imageInput').click()">
@@ -186,7 +258,7 @@
         </div>
 
         <div class="url-input-container">
-        <input type="text" id="imageUrlInput" placeholder="Enter image URL" style="width: 80%; padding: 10px; border-radius: 15px; border: 1px solid #323B4EFF; background-color: #0c111d; color: white;">
+            <input type="text" id="imageUrlInput" placeholder="Enter image URL" style="width: 80%; padding: 10px; border-radius: 15px; border: 1px solid #323B4EFF; background-color: #0c111d; color: white;">
 
             <button onclick="loadImageFromUrl()" style="padding: 10px 20px; border-radius: 15px; border: 1px solid #323B4EFF; background-color: #0C111DFF; color: white; cursor: pointer;">Load image from URL</button>
         </div>
@@ -223,51 +295,51 @@
     <?php include 'inc/footer.php'; ?>
 
     <script>
-    let img = null;
+        let img = null;
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const sizeParam = urlParams.get('size');
-    const thresholdParam = urlParams.get('threshold');
+        const urlParams = new URLSearchParams(window.location.search);
+        const sizeParam = urlParams.get('size');
+        const thresholdParam = urlParams.get('threshold');
 
-    if (sizeParam) {
-        document.getElementById('sizeSlider').value = sizeParam;
-        updateSizeValue(sizeParam);
-    }
-
-    if (thresholdParam) {
-        document.getElementById('intensitySlider').value = thresholdParam;
-        updateIntensityValue(thresholdParam);
-    }
-
-    const imageUrlParam = urlParams.get('url');
-    if (imageUrlParam) {
-        document.getElementById('imageUrlInput').value = imageUrlParam;
-        loadImageFromUrl();
-    }
-
-    function copyCurrentUrl() {
-        const size = document.getElementById('sizeSlider').value;
-        const threshold = document.getElementById('intensitySlider').value;
-        const imageUrl = document.getElementById('imageUrlInput').value;
-
-        if (!imageUrl) {
-            alert("You can only share an URL if your image was loaded from an URL!");
-            return;
+        if (sizeParam) {
+            document.getElementById('sizeSlider').value = sizeParam;
+            updateSizeValue(sizeParam);
         }
 
-        const currentUrl = `${window.location.origin}${window.location.pathname}?size=${size}&threshold=${threshold}&url=${encodeURIComponent(imageUrl)}`;
-        
-        const tempTextarea = document.createElement("textarea");
-        tempTextarea.value = currentUrl;
-        document.body.appendChild(tempTextarea);
-        tempTextarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempTextarea);
+        if (thresholdParam) {
+            document.getElementById('intensitySlider').value = thresholdParam;
+            updateIntensityValue(thresholdParam);
+        }
 
-        alert("URL copied to clipboard!");
-    }
+        const imageUrlParam = urlParams.get('url');
+        if (imageUrlParam) {
+            document.getElementById('imageUrlInput').value = imageUrlParam;
+            loadImageFromUrl();
+        }
 
-    function loadImageFromUrl() {
+        function copyCurrentUrl() {
+            const size = document.getElementById('sizeSlider').value;
+            const threshold = document.getElementById('intensitySlider').value;
+            const imageUrl = document.getElementById('imageUrlInput').value;
+
+            if (!imageUrl) {
+                alert("You can only share an URL if your image was loaded from an URL!");
+                return;
+            }
+
+            const currentUrl = `${window.location.origin}${window.location.pathname}?size=${size}&threshold=${threshold}&url=${encodeURIComponent(imageUrl)}`;
+
+            const tempTextarea = document.createElement("textarea");
+            tempTextarea.value = currentUrl;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextarea);
+
+            alert("URL copied to clipboard!");
+        }
+
+        function loadImageFromUrl() {
             const imageUrl = document.getElementById('imageUrlInput').value;
             if (!imageUrl) {
                 alert("Please enter a valid image URL.");
@@ -281,174 +353,178 @@
             img.src = imageUrl;
         }
 
-    function generateArt() {
-        const fileInput = document.getElementById('imageInput');
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        const sizeScale = parseInt(document.getElementById('sizeSlider').value);
-        const intensityThreshold = parseInt(document.getElementById('intensitySlider').value);
+        function generateArt() {
+            const fileInput = document.getElementById('imageInput');
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            const sizeScale = parseInt(document.getElementById('sizeSlider').value);
+            const intensityThreshold = parseInt(document.getElementById('intensitySlider').value);
 
-        if (fileInput.files.length === 0) {
-            alert("Please select an image first.");
-            return;
+            if (fileInput.files.length === 0 && !img) {
+                alert("Please select an image first.");
+                return;
+            }
+
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(event) {
+                    img = new Image();
+                    img.onload = () => renderArt(sizeScale, intensityThreshold);
+                    img.src = event.target.result;
+                };
+
+                reader.readAsDataURL(file);
+            } else if (img) {
+                renderArt(sizeScale, intensityThreshold);
+            }
         }
 
-        const file = fileInput.files[0];
-        const reader = new FileReader();
+        function renderArt(sizeScale, intensityThreshold) {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
 
-        reader.onload = function(event) {
-            img = new Image();
-            img.onload = () => renderArt(sizeScale, intensityThreshold);
-            img.src = event.target.result;
-        };
+            canvas.width = img.width;
+            canvas.height = img.height;
 
-        reader.readAsDataURL(file);
-    }
+            ctx.drawImage(img, 0, 0);
 
-    function renderArt(sizeScale, intensityThreshold) {
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+            let art = "";
 
-        canvas.width = img.width;
-        canvas.height = img.height;
+            for (let y = 0; y < img.height; y += 4 * (21 - sizeScale)) {
+                for (let x = 0; x < img.width; x += 2 * (21 - sizeScale)) {
+                    let dotPattern = 0;
+                    for (let row = 0; row < 4; row++) {
+                        for (let col = 0; col < 2; col++) {
+                            const pixelX = x + col * (21 - sizeScale);
+                            const pixelY = y + row * (21 - sizeScale);
 
-        ctx.drawImage(img, 0, 0);
+                            if (pixelX >= img.width || pixelY >= img.height) continue;
 
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const data = imageData.data;
-        let art = "";
+                            const index = (pixelY * img.width + pixelX) * 4;
+                            const grayscale = (data[index] + data[index + 1] + data[index + 2]) / 3;
+                            const isDot = grayscale < intensityThreshold;
 
-        for (let y = 0; y < img.height; y += 4 * (21 - sizeScale)) {
-            for (let x = 0; x < img.width; x += 2 * (21 - sizeScale)) {
-                let dotPattern = 0;
-                for (let row = 0; row < 4; row++) {
-                    for (let col = 0; col < 2; col++) {
-                        const pixelX = x + col * (21 - sizeScale);
-                        const pixelY = y + row * (21 - sizeScale);
-
-                        if (pixelX >= img.width || pixelY >= img.height) continue;
-
-                        const index = (pixelY * img.width + pixelX) * 4;
-                        const grayscale = (data[index] + data[index + 1] + data[index + 2]) / 3;
-                        const isDot = grayscale < intensityThreshold;
-
-                        if (isDot) {
-                            const bitIndex = row * 2 + col;
-                            dotPattern |= (1 << bitIndex);
+                            if (isDot) {
+                                const bitIndex = row * 2 + col;
+                                dotPattern |= (1 << bitIndex);
+                            }
                         }
                     }
+
+                    art += brailleFromPattern(dotPattern);
                 }
-
-                art += brailleFromPattern(dotPattern);
+                art += "\n";
             }
-            art += "\n";
+
+            document.getElementById("output").innerText = art;
         }
 
-        document.getElementById("output").innerText = art;
-    }
-
-    function brailleFromPattern(pattern) {
-        return String.fromCharCode(0x2800 + pattern);
-    }
-
-    function copyToClipboardCSS() {
-        const art = document.getElementById("output").innerText;
-        const commentArt = "/*\n" + art + "\n*/";
-
-        const tempTextarea = document.createElement("textarea");
-        tempTextarea.value = commentArt;
-        document.body.appendChild(tempTextarea);
-        tempTextarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempTextarea);
-
-        alert("Dot Art copied as comment!");
-    }
-
-    function copyToClipboardHTML() {
-        const art = document.getElementById("output").innerText;
-        const commentArt = "<!--\n" + art + "\n-->";
-
-        const tempTextarea = document.createElement("textarea");
-        tempTextarea.value = commentArt;
-        document.body.appendChild(tempTextarea);
-        tempTextarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempTextarea);
-
-        alert("Dot Art copied as comment!");
-    }
-
-    function copyToClipboardDART() {
-        const art = document.getElementById("output").innerText;
-        const commentArt = art.split('\n').map(line => '//   ' + line).join('\n');
-
-        const tempTextarea = document.createElement("textarea");
-        tempTextarea.value = commentArt;
-        document.body.appendChild(tempTextarea);
-        tempTextarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempTextarea);
-
-        alert("Dot Art copied as comment!");
-    }
-
-    function copyToClipboardPYTHON() {
-        const art = document.getElementById("output").innerText;
-        const commentArt = art.split('\n').map(line => '#   ' + line).join('\n');
-
-        const tempTextarea = document.createElement("textarea");
-        tempTextarea.value = commentArt;
-        document.body.appendChild(tempTextarea);
-        tempTextarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempTextarea);
-
-        alert("Dot Art copied as comment!");
-    }
-
-    function copyToClipboardRAW() {
-        const art = document.getElementById("output").innerText;
-
-        const tempTextarea = document.createElement("textarea");
-        tempTextarea.value = art;
-        document.body.appendChild(tempTextarea);
-        tempTextarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempTextarea);
-
-        alert("Dot Art copied as raw!");
-    }
-
-    // Handle file drop
-    const dropZone = document.getElementById('dropZone');
-    dropZone.addEventListener('dragover', (event) => {
-        event.preventDefault();
-        dropZone.style.backgroundColor = '#4f375e';
-    });
-
-    dropZone.addEventListener('dragleave', () => {
-        dropZone.style.backgroundColor = '';
-    });
-
-    dropZone.addEventListener('drop', (event) => {
-        event.preventDefault();
-        dropZone.style.backgroundColor = '';
-        const file = event.dataTransfer.files[0];
-        if (file) {
-            document.getElementById('imageInput').files = event.dataTransfer.files;
-            generateArt();
+        function brailleFromPattern(pattern) {
+            return String.fromCharCode(0x2800 + pattern);
         }
-    });
 
-    function updateSizeValue(value) {
-        document.getElementById('sizeValue').innerText = value;
-    }
+        function copyToClipboardCSS() {
+            const art = document.getElementById("output").innerText;
+            const commentArt = "/*\n" + art + "\n*/";
 
-    function updateIntensityValue(value) {
-        document.getElementById('intensityValue').innerText = value;
-    }
-</script>
+            const tempTextarea = document.createElement("textarea");
+            tempTextarea.value = commentArt;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextarea);
+
+            alert("Dot Art copied as comment!");
+        }
+
+        function copyToClipboardHTML() {
+            const art = document.getElementById("output").innerText;
+            const commentArt = "<!--\n" + art + "\n-->";
+
+            const tempTextarea = document.createElement("textarea");
+            tempTextarea.value = commentArt;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextarea);
+
+            alert("Dot Art copied as comment!");
+        }
+
+        function copyToClipboardDART() {
+            const art = document.getElementById("output").innerText;
+            const commentArt = art.split('\n').map(line => '//   ' + line).join('\n');
+
+            const tempTextarea = document.createElement("textarea");
+            tempTextarea.value = commentArt;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextarea);
+
+            alert("Dot Art copied as comment!");
+        }
+
+        function copyToClipboardPYTHON() {
+            const art = document.getElementById("output").innerText;
+            const commentArt = art.split('\n').map(line => '#   ' + line).join('\n');
+
+            const tempTextarea = document.createElement("textarea");
+            tempTextarea.value = commentArt;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextarea);
+
+            alert("Dot Art copied as comment!");
+        }
+
+        function copyToClipboardRAW() {
+            const art = document.getElementById("output").innerText;
+
+            const tempTextarea = document.createElement("textarea");
+            tempTextarea.value = art;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextarea);
+
+            alert("Dot Art copied as raw!");
+        }
+
+        // Handle file drop
+        const dropZone = document.getElementById('dropZone');
+        dropZone.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            dropZone.style.backgroundColor = '#4f375e';
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.style.backgroundColor = '';
+        });
+
+        dropZone.addEventListener('drop', (event) => {
+            event.preventDefault();
+            dropZone.style.backgroundColor = '';
+            const file = event.dataTransfer.files[0];
+            if (file) {
+                document.getElementById('imageInput').files = event.dataTransfer.files;
+                generateArt();
+            }
+        });
+
+        function updateSizeValue(value) {
+            document.getElementById('sizeValue').innerText = value;
+        }
+
+        function updateIntensityValue(value) {
+            document.getElementById('intensityValue').innerText = value;
+        }
+    </script>
 
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
     <script>
