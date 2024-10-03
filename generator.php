@@ -289,6 +289,7 @@
         <button id="copyBtnHTML" onclick="copyToClipboardHTML()">HTML</button>
         <button id="copyBtnDART" onclick="copyToClipboardDART()">DART</button>
         <button id="copyBtnPYTHON" onclick="copyToClipboardDART()">PYTHON</button>
+        <button id="copyBtnLUA" onclick="copyToClipboardLUA()">LUA</button>
 
         <h1 style="margin: 0; padding: 0;padding-top: 30px;font-size: 23px;font-weight: 700;">Copy as other:</h1>
         <button id="copyBtnRAW" onclick="copyToClipboardRAW()">RAW</button>
@@ -450,6 +451,20 @@
         function copyToClipboardHTML() {
             const art = document.getElementById("output").innerText;
             const commentArt = "<!--\n" + art + "\n-->";
+
+            const tempTextarea = document.createElement("textarea");
+            tempTextarea.value = commentArt;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextarea);
+
+            showNotificationS("Dot Art copied as comment!");
+        }
+
+        function copyToClipboardLUA() {
+            const art = document.getElementById("output").innerText;
+            const commentArt = "--[[\n" + art + "\n]]--";
 
             const tempTextarea = document.createElement("textarea");
             tempTextarea.value = commentArt;
