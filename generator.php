@@ -12,6 +12,7 @@
     <meta name="description" content="Generate some ASCII art from an uploaded image or an image url!">
     <meta name="author" content="Catpawz">
     <meta content="#A443D1" data-react-helmet="true" name="theme-color">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
     <meta property="og:image" content="https://ascii.fembois.eu/favicon.png">
     <style>
         /*
@@ -176,7 +177,7 @@
     </style>
 </head>
 
-<body class="bg-gray-900">
+<body class="bg-gray-900" data-scroll-container>
 
     <div id="notificationSuccess" class="hidden fixed bottom-20 left-5 bg-green-900 border border-green-600 text-green-200 px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-500" style="z-index: 999;">
         This is a notification!
@@ -187,7 +188,7 @@
     </div>
 
     <div class="relative isolate overflow-hidden bg-gray-900">
-        <svg class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
+        <svg class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] animate-fade-down" aria-hidden="true">
             <defs>
                 <pattern id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
                     <path d="M.5 200V.5H200" fill="none" />
@@ -198,7 +199,7 @@
             </svg>
             <rect width="100%" height="100%" stroke-width="0" fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)" />
         </svg>
-        <div class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]" aria-hidden="true">
+        <div class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)] animate-fade animate-duration-[3000ms]" aria-hidden="true">
             <div class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#d18843] to-[#6f00ff] opacity-20" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"></div>
         </div>
         <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
@@ -299,7 +300,8 @@
     <canvas id="canvas"></canvas>
 
     <?php include 'inc/footer.php'; ?>
-
+    <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous"></script>
+    <script nomodule src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous"></script>
     <script>
         let img = null;
 
