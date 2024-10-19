@@ -40,14 +40,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Femrise ASCII</title>
+  <title>ASCII Generator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;display=swap" rel="stylesheet">
   <link href="src/styles/output.css" rel="stylesheet">
   <link rel="icon" href="favicon.png">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -77,13 +75,13 @@
     </div>
     <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
       <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
-        <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl flex items-center">
+        <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl flex items-center animate-fade animate-delay-250">
           ASCII art for your code
         </h1>
-        <p class="mt-6 text-lg leading-8 text-gray-300">Get the ASCII art I've used in my Tik Tok's here or use the generator!</p>
-        <p class="mt-6 text-lg leading-8 text-gray-300">The images I use here are from my own big collection of boykisser pictures, if you see one that you drew, please contact me to get the attribution you deserve, or to get it removed!</p>
-        <div class="mt-10 flex items-center gap-x-6">
-          <a href="https://catpawz.net" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Fembois.eu</a>
+        <p class="mt-6 text-lg leading-8 text-gray-300 animate-fade animate-delay-500">Get the ASCII art I've used in my Tik Tok's here or use the generator!</p>
+        <p class="mt-6 text-lg leading-8 text-gray-300 animate-fade animate-delay-500">The images I use here are from my own big collection of boykisser pictures, if you see one that you drew, please contact me to get the attribution you deserve, or to get it removed!</p>
+        <div class="mt-10 flex items-center gap-x-6 animate-fade animate-delay-750">
+          <a href="https://catpawz.net" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">My website</a>
           <a href="/generator" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Generator</a>
         </div>
       </div>
@@ -134,12 +132,11 @@
   </div>
 
 
-
+  <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous"></script>
+  <script nomodule src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous"></script>
 
   <?php include 'inc/footer.php'; ?>
 </body>
-<script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous"></script>
-<script nomodule src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous"></script>
 <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 <script>
   kofiWidgetOverlay.draw('french_femboi', {
@@ -149,26 +146,4 @@
     'floating-chat.donateButton.text-color': '#fff'
   });
 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      fetch('art.json')
-        .then(response => response.json())
-        .then(cards => {
-          const container = document.getElementById('cards-container');
-          cards.forEach(card => {
-            const cardElement = document.createElement('div');
-            cardElement.className = 'bg-gray-800 rounded-lg shadow-lg p-6';
-            cardElement.innerHTML = `
-              <h3 class="text-xl font-bold text-white mb-2">${card.title}</h3>
-              <p class="text-gray-300 mb-4">${card.description}</p>
-              <pre class="text-gray-400">${card.ascii_art}</pre>
-            `;
-            container.appendChild(cardElement);
-          });
-        })
-        .catch(error => {
-          console.error('Error loading cards:', error);
-        });
-    });
-  </script>
 </html>

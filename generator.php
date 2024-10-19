@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image to dot generator</title>
+    <title>ASCII Generator</title>
     <link rel="icon" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;display=swap" rel="stylesheet">
     <link href="src/styles/output.css" rel="stylesheet">
@@ -12,7 +12,6 @@
     <meta name="description" content="Generate some ASCII art from an uploaded image or an image url!">
     <meta name="author" content="Catpawz">
     <meta content="#A443D1" data-react-helmet="true" name="theme-color">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
     <meta property="og:image" content="https://ascii.catpawz.net/favicon.png">
     <style>
         /*
@@ -204,12 +203,12 @@
         </div>
         <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
             <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
-                <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl flex items-center">
+                <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl flex items-center animate-fade animate-delay-250">
                     Image to dot generator
                 </h1>
-                <p class="mt-6 text-lg leading-8 text-gray-300">Generate ASCII art from your own images! The images are processed within your browser, and not uploaded to anywhere :3</p>
-                <p class="mt-6 text-lg leading-8 text-purple-100">v0.0.4</p>
-                <div class="mt-10 flex items-center gap-x-6">
+                <p class="mt-6 text-lg leading-8 text-gray-300 animate-fade animate-delay-500">Generate ASCII art from your own images! The images are processed within your browser, and not uploaded to anywhere :3</p>
+                <p class="mt-6 text-lg leading-8 text-purple-100 animate-fade animate-delay-500">v0.0.4</p>
+                <div class="mt-10 flex items-center gap-x-6 animate-fade animate-delay-750">
                     <a href="/" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Home</a>
                 </div>
             </div>
