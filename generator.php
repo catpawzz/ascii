@@ -13,7 +13,7 @@
     <meta name="author" content="Catpawz">
     <meta content="#A443D1" data-react-helmet="true" name="theme-color">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
-    <meta property="og:image" content="https://ascii.fembois.eu/favicon.png">
+    <meta property="og:image" content="https://ascii.catpawz.net/favicon.png">
     <style>
         /*
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀

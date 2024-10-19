@@ -54,7 +54,7 @@
   <meta name="description" content="Get some ASCII art to use in your code! Mostly Boykisser and some other random stuff...">
   <meta name="author" content="Catpawz">
   <meta content="#A443D1" data-react-helmet="true" name="theme-color">
-  <meta property="og:image" content="https://ascii.fembois.eu/favicon.png">
+  <meta property="og:image" content="https://ascii.catpawz.net/favicon.png">
 
 </head>
 
@@ -83,7 +83,7 @@
         <p class="mt-6 text-lg leading-8 text-gray-300">Get the ASCII art I've used in my Tik Tok's here or use the generator!</p>
         <p class="mt-6 text-lg leading-8 text-gray-300">The images I use here are from my own big collection of boykisser pictures, if you see one that you drew, please contact me to get the attribution you deserve, or to get it removed!</p>
         <div class="mt-10 flex items-center gap-x-6">
-          <a href="https://fembois.eu" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Fembois.eu</a>
+          <a href="https://catpawz.net" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Fembois.eu</a>
           <a href="/generator" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Generator</a>
         </div>
       </div>
