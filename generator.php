@@ -207,7 +207,7 @@
                     Image to dot generator
                 </h1>
                 <p class="mt-6 text-lg leading-8 text-gray-300 animate-fade animate-delay-500">Generate ASCII art from your own images! The images are processed within your browser, and not uploaded to anywhere :3</p>
-                <p class="mt-6 text-lg leading-8 text-purple-100 animate-fade animate-delay-500">v0.0.4</p>
+                <p class="mt-6 text-lg leading-8 text-purple-100 animate-fade animate-delay-500">v0.0.5 (21/11/2024)</p>
                 <div class="mt-10 flex items-center gap-x-6 animate-fade animate-delay-750">
                     <a href="/" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Home</a>
                 </div>
@@ -288,7 +288,7 @@
         <button id="copyBtnCSS" onclick="copyToClipboardCSS()">CSS/ C++/ Rust/ TypeScript</button>
         <button id="copyBtnHTML" onclick="copyToClipboardHTML()">HTML</button>
         <button id="copyBtnDART" onclick="copyToClipboardDART()">DART</button>
-        <button id="copyBtnPYTHON" onclick="copyToClipboardDART()">PYTHON</button>
+        <button id="copyBtnPYTHON" onclick="copyToClipboardPYTHON()">PYTHON</button>
         <button id="copyBtnLUA" onclick="copyToClipboardLUA()">LUA</button>
 
         <h1 style="margin: 0; padding: 0;padding-top: 30px;font-size: 23px;font-weight: 700;">Copy as other:</h1>
