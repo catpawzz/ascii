@@ -14,178 +14,34 @@
     <meta content="#A443D1" data-react-helmet="true" name="theme-color">
     <meta property="og:image" content="https://ascii.catpawz.net/favicon.png">
     <style>
-        /*
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠸⢬⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡺⠁⠀⠍⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡸⠆⠁⠀⠂⢵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡺⠁⠀⠀⠀⠂⠭⡐⠀⠀⠀⠀⢠⠰⣐⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⠀⠀⠀⠂⢵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡺⠁⠀⠀⠀⠀⠀⠀⠋⣔⠀⠀⠀⣾⠀⠀⠂⠋⠬⢰⡀⠀⠀⠀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠂⢵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣪⠁⠀⠀⠀⠀⠀⢠⠸⠜⠎⠍⠌⠬⠿⠀⠀⠀⠀⠀⠀⠃⠭⣐⡺⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⣔⠀⠀⠀⠀⠀⠀⠀⠀⠀               This boikisser is angy
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠕⠀⠀⠀⠀⠀⠀⠂⢥⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⠴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⡐⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠴⣐⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⣨⣀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣵⠀⠀⠀⠀⠀                      because you're either looking at this code
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣮⢷⢯⡎⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢫⠀⠀⠀⠀⠀⠀⠀⠀   
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⠅⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣪⠀⠀⠀⠀⠀⠀⠀                       for fun, or because you're trying
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⣕⠀⠀⠀⠀⠀⠀⢰⠰⢰⣐⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣰⠸⠜⢮⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀                      to steal it. Either way, I'm watching you.
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⣐⠀⠀⠀⠀⠀⡞⠀⢀⣿⣿⣿⣿⡛⠄⠀⠀⠀⠀⠀⢯⣿⣿⣿⣿⡔⠀⠂⣕⠀⠀⠀⠀⠀⢀⡀⢀⡸⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡞⠂⠅⠀⠀⠀⠀⡕⠀⢪⣿⣿⣿⣿⡕⠀⠀⠀⠀⠀⠀⢪⣿⣿⣿⣿⡕⠀⠀⢫⠀⠀⠀⠀⠀⠀⠃⠯⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠀⠀⠀⠀⠀⠀⠀⡕⠀⠊⣿⣿⣿⣿⡕⠀⠀⠀⠀⠀⠀⠪⣿⣿⣿⣿⡕⠀⠀⣺⠀⠀⠀⠀⠀⠀⠀⠀⠂⢭⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠥⡀⠀⠀⠀⠀⠀⢫⡀⠀⠋⠿⠿⠏⠁⠀⠀⠀⠀⠀⠀⠀⠋⠟⠏⠏⠅⠀⠂⠁⠀⠀⠀⠀⠀⠀⠀⢀⡸⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⢭⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣰⠸⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡜⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡺⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⠰⢰⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠗⢀⣀⣀⣺⡴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠾⣰⣀⣀⡀⠀⠬⣐⠀⠀⠀⠀⠀⠀⠀⠊⠃⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠐⠀⠀⠀⢀⣀⡿⠀⣀⣠⣰⣐⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠸⠌⠌⠌⠌⠴⣐⠀⠀⠀⠀⠂⠃⠃⠃⠃⠋⠴⣐⢠⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠸⠎⠋⠍⠌⠏⠃⠃⠀⣨⠇⡕⠀⠀⢀⡔⠃⠍⢴⡀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠇⠀⢨⡀⠀⠀⢨⡕⠂⠭⡐⠀⠀⠀⠀⠀⣠⠜⠮⡓⠏⠹⣼⣿⣿⣴⠀⠀⠀⠀⠀⠀⠈⠎⠇⠋⠍⠬⢐⡀⠀⠀⠀⠀⠀⣺⠁⠀⢁⣀⣀⣊⠅⠀⠀⣠⢭⡀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡕⣀⠀⠀⢁⣠⡰⠰⣐⠀⠀⠫⡐⠀⠀⠀⡺⠁⠀⣼⣟⣽⣤⣺⣿⣿⣿⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⣔⠀⠀⠀⢨⠕⠀⠈⣗⠀⠀⠂⠃⠭⡐⠅⠀⣕⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⡕⠂⠁⣸⠇⠀⠀⠀⣪⠀⠀⠀⢫⡀⠀⠨⠅⠀⠊⠏⠯⢻⣿⣿⣿⣿⡟⠋⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⣕⠀⠀⡟⠀⠀⠀⠂⠏⠬⠴⠰⠼⠅⠀⠀⣿⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠫⡐⠀⠂⠬⠼⠜⠇⠁⠀⠀⠀⠀⢭⡀⠁⠀⠀⠀⠀⠀⠊⠿⣿⡿⠗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⠀⠀⠀⢪⡐⣪⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡕⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠫⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠂⠄⢰⡰⠰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⡀⠀⠀⠀⢷⠕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡞⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢯⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡑⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⡕⠀⠀⠀⠎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⠋⣔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢭⠀⠀⠀⠀⠀⠀⠐⠀⣠⣸⡿⠁⢀⣺⣿⡜⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣪⠁⠀⠂⢵⡀⢨⢴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠅⠀⠀⣀⣀⣰⣸⣾⣿⠗⠀⢀⣾⣿⣿⣰⡺⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠕⠀⠀⠀⠀⢭⣿⠂⢵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠌⣾⣿⣿⣿⣿⣿⠅⠀⣾⣿⣿⣿⣻⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡗⠀⠀⠀⠀⠀⠀⠿⠀⠂⣕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡿⠁⠀⣨⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⡭⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠪⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⠋⠀⠋⠃⣫⣿⣿⣿⠁⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠪⡕⠂⠋⠬⠰⣰⣰⣰⡰⠰⠜⠇⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢽⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣈⣾⣿⣿⣿⠿⠇⠊⠫⣼⣾⣿⣿⡿⠟⢪⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⢠⠕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠃⠃⠃⠃⠀⠀⠀⠀⠃⠃⠃⠁⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-*/
-
-
         .output {
             white-space: pre;
-            font-size: 16px;
             font-family: 'Braille', monospace;
-            margin-top: 20px;
             background-color: #0C111DFF;
-            padding: 20px;
             border: 1px solid #323B4EFF;
-            border-radius: 10px;
-            max-width: 80vw;
-            overflow: auto;
             color: #f0f0f0;
             text-align: center;
-        }
-
-        button {
-            background-color: #0C111DFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
-            border-radius: 15px;
-            border: 1px solid #323B4EFF;
-            transition: 0.2s;
-        }
-
-        button:hover {
-            background-color: #323B4EFF;
-            transition: 0.2s;
-        }
-
-        .slider-container {
-            margin-top: 20px;
-
-        }
-
-        .slider-container label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .slider-container input {
-            width: 100%;
-            border-radius: 15px;
-        }
-
-        .slider-container {
-            margin: 20px 0;
-        }
-
-        input[type="range"] {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 10px;
-            border-radius: 5px;
-            background: #0c111d;
-            border: 1px solid #323B4EFF;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #8490AAFF;
-            border: 1px solid #323B4EFF;
-            cursor: pointer;
-        }
-
-        input[type="range"]::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #8490AAFF;
-            border: 1px solid #323B4EFF;
-            cursor: pointer;
-        }
-
-        input[type="range"]::-ms-thumb {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #8490AAFF;
-            border: 1px solid #323B4EFF;
-            cursor: pointer;
+            overflow: auto;
         }
 
         canvas {
             display: none;
         }
-
-        .drop-zone {
-            margin-top: 20px;
-            padding: 20px;
-            border: 2px dashed #323B4EFF;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 16px;
-            color: #A9B4CCFF;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .drop-zone:hover {
-            background-color: #252C3BFF;
-            transition: 0.2s;
-        }
-
-        h1,
-        h2,
-        h3 {
-            color: #A9B4CCFF;
-        }
-
-        label {
-            color: #A9B4CCFF;
-        }
     </style>
 </head>
 
-<body class="bg-gray-900" data-scroll-container>
+<body class="bg-gray-900 text-gray-200" data-scroll-container>
 
-    <div id="notificationSuccess" class="hidden fixed bottom-20 left-5 bg-green-900 border border-green-600 text-green-200 px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-500" style="z-index: 999;">
+    <!-- Notifications -->
+    <div id="notificationSuccess" class="hidden fixed bottom-20 left-5 bg-green-900 border border-green-600 text-green-200 px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-500 z-50">
         This is a notification!
     </div>
 
-    <div id="notificationError" class="hidden fixed bottom-20 left-5 bg-red-900 border border-red-600 text-red-200 px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-500" style="z-index: 999;">
+    <div id="notificationError" class="hidden fixed bottom-20 left-5 bg-red-900 border border-red-600 text-red-200 px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-500 z-50">
         This is a notification!
     </div>
 
+    <!-- Header with animated background -->
     <div class="relative isolate overflow-hidden bg-gray-900">
         <svg class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] animate-fade-down" aria-hidden="true">
             <defs>
@@ -201,155 +57,198 @@
         <div class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)] animate-fade animate-duration-[3000ms]" aria-hidden="true">
             <div class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#d18843] to-[#6f00ff] opacity-20" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"></div>
         </div>
-        <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+        <div class="mx-auto max-w-7xl px-6 py-12 sm:py-16 lg:flex lg:px-8">
             <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
-                <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl flex items-center animate-fade animate-delay-250">
-                    Image to dot generator
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl flex items-center animate-fade animate-delay-250">
+                    Image to ASCII Art Generator
                 </h1>
-                <p class="mt-6 text-lg leading-8 text-gray-300 animate-fade animate-delay-500">Generate ASCII art from your own images! The images are processed within your browser, and not uploaded to anywhere :3</p>
-                <p class="mt-6 text-lg leading-8 text-purple-100 animate-fade animate-delay-500">v0.0.6 (05/01/2025)</p>
-                <div class="mt-10 flex items-center gap-x-6 animate-fade animate-delay-750">
-                    <a href="/" class="rounded-md bg-purple-900 px-3.5 py-2.5 text-sm font-semibold text-purple-300 shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">Home</a>
+                <p class="mt-4 text-lg leading-8 text-gray-300 animate-fade animate-delay-500">Transform your images into beautiful dot patterns! All processing happens in your browser - no uploads needed.</p>
+                <p class="mt-2 text-purple-200 animate-fade animate-delay-500">v0.0.6 (05/01/2025)</p>
+                <div class="mt-6 flex items-center gap-x-6 animate-fade animate-delay-750">
+                    <a href="/" class="rounded-md bg-purple-700 hover:bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">
+                        Home
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢠⠞⠍⠌⠰⢐⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢀⠟⠀⠀⠀⠀⠀⠂⠋⠤⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠰⠌⠆⠃⠃⢕⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠴⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠘⠆⠁⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⢪⠃⠋⠌⠌⠌⠤⠰⠲⣽⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠃⠬⣐⠀⠀⢀⡰⠜⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⡐⠀⠀⠀⠀⠀⠀         Meow meow
-⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠃⠌⠌⠰⠰⣀⣀⠀⢪⠀⠀⠂⠭⣘⠃⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢨⠁⣀⡀⠀⠀⠪⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠃⢯⠀⠀⠀⠀⠂⠭⠜⠇⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀             I'm sure y'all have seen the tik tok for this
-⠀⠀⠀⠀⠀⢪⠿⠱⠰⠰⢰⣀⣵⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠺⠰⣀⡀⠀⠀⠀⢀⣀⣀⣀⣀⠀⢪⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠊⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⠌⠎⠃⠇⠃⠁⠀⠀⠀⠂⡕⠊⡔⠀⠀⠀⠀⠀                 or maybe you're looking at it right now :3
-⠀⠀⠀⠀⠀⠀⣕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠁⠀⡕⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠏⠿⡕⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠂⣔⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡪⠂⠉⠬⣵⣀⠀⠀⠀⠀
-⠀⣀⡠⠸⠌⠆⠃⠩⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠅⠀⠀⠀⠀⠂⠃⠌⠬⠐
-⢾⠁⠀⠀⠀⠀⠀⠀⢩⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠨⡐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠕⠀⠀⠀⠀⠀⠀⠀⠀⢀⠕
-⠀⠩⡀⠀⠀⠀⠀⠀⠀⢋⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⢴⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⠁⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⢠⠔⠀⠀⠀⠀⠀⠀⠀⠀⢀⠖⠀
-⠀⠀⠊⢔⠀⠀⠀⠊⠯⢳⣀⠈⠌⡜⠆⠃⠃⠃⠃⣿⣿⣿⣿⡕⠋⠴⣀⣀⣂⠃⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠃⡗⠁⠀⠠⣕⠀⠀⠀⠀⠀⠀⠀⠀⣠⠖⠀⠀
-⠀⠀⠀⠂⠭⡀⠀⠀⠀⠀⠂⠁⠀⢥⠀⠀⠀⠀⠀⠊⣿⣿⣿⠕⠀⠀⠀⠀⠀⠀⠪⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⢪⠁⠀⠀⢀⡲⠏⠀⠀⠀⠀⠀⢀⡸⠁⠀⠀⠀
-⠀⠀⠀⠀⠀⠂⢤⡀⠀⠀⠀⠀⠀⠂⣴⡀⠀⠀⠀⠀⠊⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠋⠿⠟⠁⠀⠀⣰⡀⠀⣠⠅⠀⠀⠀⠁⠀⠀⠀⠀⠀⢀⠸⠇⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠋⠤⣐⠀⠀⠀⡺⠁⠃⢀⡀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⢪⠃⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⣠⠘⠁⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⣬⡐⠊⢴⣸⡿⠀⠀⠀⠀⠊⣔⣀⡰⠜⠬⠰⠰⠰⠌⠎⠃⠀⠀⢠⣐⠀⣕⡀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢼⣃⣁⠀⠀⠀⠃⠍⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠯⣿⠇⢁⡀⠀⠀⠀⠀⠀⠀⠀⣃⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠃⠃⠍⠌⠌⠌⠎⣧⠼⠬⢴⣀⣠⣐⣀⣀⣀⣰⡰⠀⣀⣀⠰⠼⢟⣍⣃⣁⣀⣀⣀⠰⠰⠘⠌⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣺⠂⠫⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠘⣟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⢸⠎⠃⢊⡰⡐⠂⠉⢴⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⢴⣪⢋⠜⢰⣐⡀⠀⠀⣀⠰⠘⠎⠃⠀⠂⡕⢠⣾⡕⠀⣀⡰⠞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡛⢪⠀⠀⠀⠃⠋⠃⠀⠀⠀⠀⠀⠀⠀⢩⠃⠃⢭⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠅⡚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⡔⠀⢪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡚⢀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡕⠀⠪⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠅⣪⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢡⠀⠀⡕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
--->
-
-    <div class="container mx-auto px-6 py-10">
-
-        <div class="drop-zone" id="dropZone" onclick="document.getElementById('imageInput').click()">
-            Drag & drop an image here or click to upload!
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column: Input Controls -->
+            <div class="lg:col-span-1 space-y-6">
+                <!-- Image Upload Card -->
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                    <h2 class="text-xl font-semibold text-purple-300 mb-4">1. Upload Image</h2>
+                    
+                    <!-- Drag & Drop Zone -->
+                    <div id="dropZone" onclick="document.getElementById('imageInput').click()" 
+                        class="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center cursor-pointer hover:bg-gray-700 transition-colors duration-200 mb-4 flex flex-col items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                        <p class="text-gray-300">Drag & drop an image here</p>
+                        <span class="text-sm text-gray-400 mt-1">or click to browse files</span>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" class="hidden" onchange="generateArt()">
+                    
+                    <!-- OR Separator -->
+                    <div class="flex items-center my-4">
+                        <div class="flex-grow h-px bg-gray-600"></div>
+                        <span class="px-3 text-sm text-gray-400">OR</span>
+                        <div class="flex-grow h-px bg-gray-600"></div>
+                    </div>
+                    
+                    <!-- URL Input -->
+                    <div class="space-y-2 mb-4">
+                        <label for="imageUrlInput" class="block text-sm font-medium text-gray-300">Image URL:</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="imageUrlInput" placeholder="https://example.com/image.jpg" 
+                                class="flex-grow bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <button onclick="loadImageFromUrl()" 
+                                class="bg-purple-700 hover:bg-purple-600 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap transition-colors duration-200">
+                                Load URL
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Preview Image (hidden until loaded) -->
+                    <div id="imagePreview" class="hidden mt-4 border border-gray-700 rounded-lg overflow-hidden">
+                        <img id="previewImg" class="max-w-full h-auto" alt="Preview">
+                    </div>
+                </div>
+                
+                <!-- Settings Card -->
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                    <h2 class="text-xl font-semibold text-purple-300 mb-4">2. Adjust Settings</h2>
+                    
+                    <!-- Scale Slider -->
+                    <div class="mb-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="sizeSlider" class="text-sm font-medium text-gray-300">Scale:</label>
+                            <span id="sizeValue" class="text-sm bg-gray-700 px-2 py-1 rounded text-white">12</span>
+                        </div>
+                        <input type="range" id="sizeSlider" min="1" max="30" value="12" step="1" 
+                            class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-purple-500"
+                            oninput="updateSizeValue(this.value)">
+                        <div class="flex justify-between text-xs text-gray-400 mt-1">
+                            <span>Small</span>
+                            <span>Large</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Threshold Slider -->
+                    <div class="mb-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="intensitySlider" class="text-sm font-medium text-gray-300">Threshold:</label>
+                            <span id="intensityValue" class="text-sm bg-gray-700 px-2 py-1 rounded text-white">128</span>
+                        </div>
+                        <input type="range" id="intensitySlider" min="0" max="255" value="128" 
+                            class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-purple-500"
+                            oninput="updateIntensityValue(this.value)">
+                        <div class="flex justify-between text-xs text-gray-400 mt-1">
+                            <span>More dots</span>
+                            <span>Less dots</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Generate Button -->
+                    <button id="regenerateBTN" onclick="generateArt()" 
+                        class="w-full py-3 bg-purple-700 hover:bg-purple-600 text-white rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+                        </svg>
+                        Generate ASCII Art
+                    </button>
+                    
+                    <p class="text-red-300 text-sm mt-3">⚠️ Large scales may cause your browser to freeze</p>
+                </div>
+            </div>
+            
+            <!-- Right Column: Result & Copy Options -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Output Card -->
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                    <h2 class="text-xl font-semibold text-purple-300 mb-4">3. Result</h2>
+                    
+                    <div id="outputWrapper" class="relative min-h-[400px]">
+                        <!-- Loading Indicator (hidden by default) -->
+                        <div id="loadingIndicator" class="hidden absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 rounded-lg">
+                            <div class="flex flex-col items-center">
+                                <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
+                                <p class="mt-4 text-purple-300">Generating ASCII art...</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Output Container -->
+                        <div id="output" class="output text-sm md:text-base bg-gray-900 rounded-lg p-4 min-h-[400px] max-h-[600px] overflow-auto"></div>
+                    </div>
+                </div>
+                
+                <!-- Copy Options Card -->
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                    <h2 class="text-xl font-semibold text-purple-300 mb-4">4. Copy & Share</h2>
+                    
+                    <!-- Code Comment Copy Buttons -->
+                    <div class="mb-5">
+                        <h3 class="text-gray-300 text-sm font-medium mb-3">Copy as code comment:</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                            <button id="copyBtnCSS" onclick="copyToClipboardCSS()" 
+                                class="bg-gray-700 hover:bg-gray-600 text-sm text-gray-200 py-2 px-3 rounded transition-colors duration-200">
+                                CSS/TS
+                            </button>
+                            <button id="copyBtnHTML" onclick="copyToClipboardHTML()" 
+                                class="bg-gray-700 hover:bg-gray-600 text-sm text-gray-200 py-2 px-3 rounded transition-colors duration-200">
+                                HTML
+                            </button>
+                            <button id="copyBtnDART" onclick="copyToClipboardDART()" 
+                                class="bg-gray-700 hover:bg-gray-600 text-sm text-gray-200 py-2 px-3 rounded transition-colors duration-200">
+                                Dart
+                            </button>
+                            <button id="copyBtnPYTHON" onclick="copyToClipboardPYTHON()" 
+                                class="bg-gray-700 hover:bg-gray-600 text-sm text-gray-200 py-2 px-3 rounded transition-colors duration-200">
+                                Python
+                            </button>
+                            <button id="copyBtnLUA" onclick="copyToClipboardLUA()" 
+                                class="bg-gray-700 hover:bg-gray-600 text-sm text-gray-200 py-2 px-3 rounded transition-colors duration-200">
+                                Lua
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Other Copy Options -->
+                    <div>
+                        <h3 class="text-gray-300 text-sm font-medium mb-3">Other options:</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <button id="copyBtnRAW" onclick="copyToClipboardRAW()" 
+                                class="bg-gray-700 hover:bg-gray-600 text-sm text-gray-200 py-2 px-4 rounded transition-colors duration-200 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                </svg>
+                                Copy Raw Text
+                            </button>
+                            <button id="copyBtnURL" onclick="copyCurrentUrl()" 
+                                class="bg-gray-700 hover:bg-gray-600 text-sm text-gray-200 py-2 px-4 rounded transition-colors duration-200 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                                </svg>
+                                Copy Shareable URL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="url-input-container">
-            <input type="text" id="imageUrlInput" placeholder="Enter image URL" style="width: 80%; padding: 10px; border-radius: 15px; border: 1px solid #323B4EFF; background-color: #0c111d; color: white;margin-top: 15px;">
-
-            <button onclick="loadImageFromUrl()">Load image from URL</button>
-        </div>
-
-        <input type="file" id="imageInput" accept="image/*" style="display:none" onchange="generateArt()">
-        <button id="regenerateBTN" onclick="generateArt()" style="width: 100%;">Regenerate (be careful!)</button>
-        <p class="description text-red-200 mt-4" style="margin-top: 5px;padding-top:10px;font-size: 20px;">If you selected a size that's too big, the page might freeze! Don't say I didn't warn you >:3</p>
-
-        <hr class="mt-8 border-t-2 border-gray-700">
-
-        <h3 style="margin: 0; padding: 0;padding-top: 30px;font-size: 23px;font-weight: 700;">Specifications:</h3>
-        <div class="slider-container">
-            <label for="sizeSlider">Output Size (Scale): <span id="sizeValue">12</span></label>
-            <input type="range" id="sizeSlider" min="1" max="30" value="12" step="1" oninput="updateSizeValue(this.value)">
-        </div>
-
-        <div class="slider-container">
-            <label for="intensitySlider">Dot Intensity (Threshold): <span id="intensityValue">128</span></label>
-            <input type="range" id="intensitySlider" min="0" max="255" value="128" oninput="updateIntensityValue(this.value)">
-        </div>
-
-        <hr class="mt-8 border-t-2 border-gray-700">
-
-        <h3 style="margin: 0; padding: 0;padding-top: 30px;font-size: 23px;font-weight: 700;">Output:</h3>
-        <div id="output" class="output"></div>
-
-        <hr class="mt-10 border-t-2 border-gray-700">
-
-        <h1 style="margin: 0; padding: 0;padding-top: 30px;font-size: 23px;font-weight: 700;">Copy as code comment:</h1>
-        <button id="copyBtnCSS" onclick="copyToClipboardCSS()">CSS/ C++/ Rust/ TypeScript</button>
-        <button id="copyBtnHTML" onclick="copyToClipboardHTML()">HTML</button>
-        <button id="copyBtnDART" onclick="copyToClipboardDART()">DART</button>
-        <button id="copyBtnPYTHON" onclick="copyToClipboardPYTHON()">PYTHON</button>
-        <button id="copyBtnLUA" onclick="copyToClipboardLUA()">LUA</button>
-
-        <h1 style="margin: 0; padding: 0;padding-top: 30px;font-size: 23px;font-weight: 700;">Copy as other:</h1>
-        <button id="copyBtnRAW" onclick="copyToClipboardRAW()">RAW</button>
-        <button id="copyBtnURL" onclick="copyCurrentUrl()">URL</button>
     </div>
 
-    <!--
-                                     ⠔ ⢠    ⣀⠐                                              
-                                    ⢪  ⡀  ⠠⢦⠅                                               
-                 ⠐⠌⢠⡰⢀⡀             ⠊⡀ ⡕ ⠠⠁⡔                     ⢀⣠⡐⢀                       
-                ⢠ ⢄  ⠃⠈⠅⠸⢠⡀          ⠡⡀⢠ ⠕                  ⣀⠠⡘⠴⠏⠃⢠ ⡗⠄                      
-                ⢪ ⠂⢔      ⠂⠁⠌⠠⢀⡀  ⢀⣀⣰⣐⡉⢜⡤⡕            ⣀⠠⠐⣌⠢⠉⠄⠁    ⠒ ⠁                       
-                ⢪   ⠤           ⠏⠃⠁     ⠂⠃ ⠓⠏⠏⠍⠎⠇⠡⠘⡜⡤⠳⠈⠂⠁        ⡚  ⡀                       
-                ⢪    ⠉⢐        ⠈                               ⢀⠒   ⡕                       
-                ⢪   ⢀⣀⠰⠙   ⠈⢀  ⠰⡀                             ⡠⠄ ⡀  ⡕                       
-                  ⠂⠋⠠⢀   ⠠⠄      ⢀⠄               ⠡    ⢀     ⠂⣌⠣⠃⠁  ⠁                       
-                 ⡐ ⢀⠘⠆⠁ ⢠⠁ ⠐⠈   ⢀⠄         ⡤           ⠂⠐     ⠂⠉⠤⡀ ⢨                        
-                 ⠕⠊⢍⠗  ⢀⠅     ⢀ ⡒  ⣠⠔              ⡀    ⠂⡐    ⠈⢓⡁⠎⠐⡂                     Meow meow   
-                 ⢠     ⠐      ⠂⢠ ⢀⡸⢯        ⢪          ⡀ ⠈⡀   ⢐⠌⠌⠃ ⠅                            this text is so smol
-                 ⢢⠄   ⢠⢀⠁ ⡀   ⠕⡐⠠⠆ ⠂        ⢪ ⡔   ⠂⡸⢀ ⠄⢡  ⢡   ⠂⠤ ⢀⠋                         You'll sure have some fun reading it
-                ⢀⠄  ⡈ ⡀⡂ ⢀⠁  ⢀⢀⠈⠁    ⡀      ⢪ ⣝    ⡕   ⡐⡐  ⠔     ⡰⠅                         
-               ⠠⠄  ⢀⠁ ⡕⠅ ⠊   ⢪⠊     ⠅⡕      ⢪  ⢕   ⡟   ⠅⠜  ⠈     ⠍⡀                         
-             ⢀⠘⠁   ⡀     ⡔  ⢠⢯⢀⡀    ⢀⡟         ⠊⡐ ⢠⠕⠕⡀  ⡕⣕  ⠕     ⠉⡀                        
-           ⢀⠘⠁⢀   ⢀⠁  ⢪  ⠁ ⢠⠅ ⡀ ⠌⢠⢀ ⠊⡕⢁ ⡐    ⢈ ⢀⢨ ⠊ ⠨⠕⠐ ⡇⣻⡐ ⢠      ⠈⠐                       
-      ⣀⢀⠠⠐⣆⡠⠘⡦⠁   ⠊   ⡕   ⢠⢅ ⢰⡑⢀   ⠂⠄⡕ ⠐⢪⡀   ⡿⠉⠂ ⠕ ⡀ ⡕⢀ ⠔⢊⠟⡀⠂       ⠂⠤⡀⡀                    
-       ⠃⠃⠁  ⠠⠁⢀⠸⠁ ⡔⡔  ⢠⡔⢪⢀⢾⡿⠚⠏⢏⣠⢮⣴⡀  ⢠ ⠈⣪⠭⡀  ⡩ ⣁⡠⣰⣆⡳⠜⡯⣒⡐ ⢪⠂⢙⡀       ⢝⠠⠒⢈⣍⣌⠰                 
-           ⢠⠅⡠⠁  ⢀⢩⡐   ⢤ ⡊⠁ ⢠⡿⠇⣱⢀⣂⡋  ⠂⠐ ⠊ ⠃  ⠠⠏⣣⣽⣼⢐⡀⡀⠃⠯⣿⢼⡏  ⠬⡀ ⢠  ⢨⠰⡀⢔                      
-           ⡲⠆  ⠪ ⣺⡐⢅   ⠪⠁⡀  ⢪  ⠿⠞⠊⡕            ⡞⠃⣿⣿⠃⣿  ⠊⣽⠕     ⢪⣄  ⢥ ⠢⡐                     
-           ⠁   ⢀⠆⢪⠁⢪⠐ ⡕ ⢕⢠  ⠊⢔ ⢀ ⡀⠄            ⣅    ⡊   ⡊ ⠈    ⣿⣖⢤⡀ ⠩⡀⠨                     
-             ⡠ ⠁ ⢪ ⣯⠂⣴⢈⡀⠈⠠⡄    ⠃                ⠂⠉⠄⠲   ⠠⢁⠒     ⢽⡵⢆⢤⢘⢰⣂⡉⣤⠐                   
-           ⠂⠃⠈⠌⠄ ⠎⣲⡇⡂⡗⢮⡂⡔⠡⠈⢔                          ⡀⡡⡆   ⠊ ⢨⢊⣽⡗⠌⠏⠏⠃⠁                     
-                ⢀⣞⣿⠓ ⣕ ⠫⢾⡐⠩⡀⠂                        ⠒⠆⢀⡕   ⠅ ⡂⣾⠂⢟⠐                         
-               ⠂⠃⠃⠁  ⣿⣹⣰⣼⡫⡐⠂       ⢠        ⡀         ⢀⣾⠁  ⠪ ⢀⢯⡕  ⠉⠐                        
-                    ⢠⠿⢶⣿⣳⠇⢯⣐ ⠂                       ⢠⢝⣮   ⡐ ⡀⢼⠐                            
-                   ⠰⠻⠃⠁⠂⠾⢀⣕⠿⢴⡀                      ⡠⠏⢪⠔   ⠅⠨  ⠉                            
-                        ⣠⣾⣿⣾⠿⣹⠘⣐                 ⡀⠸⠞⠡⠥⡈⡔   ⡠⠁                               
-                             ⠅ ⠂⠊⣴⢐          ⣀⣠⠈⣂⠰⢨⠙⢩     ⢪                                 
-                            ⠠⠘⠄⠄⠁⢪⢀⡒⡈⠰⢀⣀⡠⠰⣌⠦⡁⠺⠅⠃    ⠂⡔⢀⠁ ⡕                                  
-                          ⠐⠌     ⠊⠂⠃⡰⢀⠎⡣⢃⣆⡸          ⠊⠇  ⡨ ⡐                                
-                         ⡂⡨⢰    ⠨⣺⠂⡘⢠⠥⠞⡸⡥⡕⡸          ⠒  ⢀⠅⠡⢀ ⢀⡀⠠⠰ ⠄⠄⠂⠤⡀                     
-                        ⢀⢷⣋⡻   ⠠⠜⠋⣔⡘⢁⠱⠊⠁ ⢀⡄⡕        ⠒ ⢀⠘⠋  ⠉⢔         ⠂⢔                    
-                        ⣚⣍⣌⣧⠆⡀ ⢨⠥⠤ ⠂⠁    ⢪⠤⢻      ⡠⣄⢰⠄⠁      ⠁         ⠂⠰                   
-                      ⢀⣨⠸⢠⡫⠌⠍⢡          ⡠⠁⢁⡪⠄  ⠈⠌⠆⡃⠘⠁                   ⠂⡐                  
-                   ⢀⡀⠈⠡⡯⠄⠁⡄    ⢡      ⡠⠂⢀⠐⠃ ⣠   ⡠⠆                       ⠈⡀                 
-             ⢀⡀⠰⠈ ⠃⠁  ⠁      ⠈  ⠄⡀  ⠔⠂ ⠘⠁ ⢀⠘⠁ ⡠⠆                          ⠡                 
-            ⡊⠁            ⢨⠈⡀    ⢵  ⡴⠆  ⡠⠈⠁ ⠂⠆                             ⠃⠈⢐              
-           ⡨               ⡐⠂⢄  ⠊⣲⠘⠆⠁⡠⠘                                      ⠂⡔             
-          ⢠⠁               ⠈  ⢥ ⣰⣁⡀⠘⠁                                                       
-          ⠔                ⢀⡰⠈⠆⠛⠁  ⡀                  ⣀⡀⡀                                   
-         ⡊                 ⢫      ⡚            ⢀⡀⠰⠈⠄⠂⠁    ⡀                      ⠥⣀         
-      ⢠⡬⠘⠅    ⢀            ⢪     ⡊        ⡀⠰⠈⠄⠃    ⣀⠠⠐⠈⠄⠃⠁    ⠈                    ⠉⢐       
-      ⡔                    ⢪    ⠠            ⢀⡀⠐⠌⠂⠁           ⡀                      ⠅  ⡀   
-     ⢀                     ⠊⣐⣀⡀⡀⠅        ⠂⠠⠈⠂                 ⡑                          ⡕  
-     ⠪         ⡅           ⠐⠁⢀⠒⠂                              ⠁⠠⠰⠐⢀⣀⠈   ⠂⠁               ⡕  
-     ⡔        ⠅           ⠪ ⠠⠄                                  ⡀    ⠂⠁  ⠌⠌⠄             ⢐  
-   ⢠⠇         ⠨         ⢀⠘⢁⠘⠁  ⢪                                ⠂⠤⡀                       ⠡⡀
-  ⢀⠔           ⠂       ⠠⠆ ⠄    ⠊                                  ⢢⠄⢀                       
-                      ⠈⠁       ⠐                                  ⠔                         
-
--->
+    <!-- Footer -->
+    <div class="mt-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 py-8 text-center text-sm text-gray-500">
+            <p>Created by Catpawz © 2025</p>
+            <p class="mt-2">All processing happens in your browser - no images are uploaded to any server.</p>
+        </div>
+    </div>
 
     <canvas id="canvas"></canvas>
 
@@ -359,10 +258,13 @@
     <script>
         let img = null;
 
+        // Check URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const sizeParam = urlParams.get('size');
         const thresholdParam = urlParams.get('threshold');
+        const imageUrlParam = urlParams.get('url');
 
+        // Initialize UI from URL params if available
         if (sizeParam) {
             document.getElementById('sizeSlider').value = sizeParam;
             updateSizeValue(sizeParam);
@@ -373,58 +275,83 @@
             updateIntensityValue(thresholdParam);
         }
 
-        const imageUrlParam = urlParams.get('url');
         if (imageUrlParam) {
             document.getElementById('imageUrlInput').value = imageUrlParam;
             loadImageFromUrl();
             showNotificationS("Loaded image from URL parameters!");
         }
 
+        // Copy URL with current parameters
         function copyCurrentUrl() {
             const size = document.getElementById('sizeSlider').value;
             const threshold = document.getElementById('intensitySlider').value;
             const imageUrl = document.getElementById('imageUrlInput').value;
 
             if (!imageUrl) {
-                showNotificationE("You an only export the URL if you loaded an image from a URL!");
+                showNotificationE("You can only share the URL if you loaded an image from a URL!");
                 return;
             }
 
             const currentUrl = `${window.location.origin}${window.location.pathname}?size=${size}&threshold=${threshold}&url=${encodeURIComponent(imageUrl)}`;
-
-            const tempTextarea = document.createElement("textarea");
-            tempTextarea.value = currentUrl;
-            document.body.appendChild(tempTextarea);
-            tempTextarea.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempTextarea);
-
-            showNotificationS("URL copied to clipboard!");
+            navigator.clipboard.writeText(currentUrl)
+                .then(() => showNotificationS("Shareable URL copied to clipboard!"))
+                .catch(() => {
+                    // Fallback for browsers that don't support clipboard API
+                    const tempTextarea = document.createElement("textarea");
+                    tempTextarea.value = currentUrl;
+                    document.body.appendChild(tempTextarea);
+                    tempTextarea.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(tempTextarea);
+                    showNotificationS("Shareable URL copied to clipboard!");
+                });
         }
 
+        // Load image from URL
         function loadImageFromUrl() {
             const imageUrl = document.getElementById('imageUrlInput').value;
             if (!imageUrl) {
-                showNotificationE("Please use a valid image URL!");
+                showNotificationE("Please enter a valid image URL!");
                 return;
             }
 
+            // Show loading indicator
+            document.getElementById('loadingIndicator').classList.remove('hidden');
+            
             img = new Image();
             img.crossOrigin = "Anonymous"; // Handle CORS issues
-            img.onload = () => renderArt(parseInt(document.getElementById('sizeSlider').value), parseInt(document.getElementById('intensitySlider').value));
-            img.onerror = () => showNotificationE("The image could not be loaded! Make sure the URL is correct and the image is accessible. (this also might be a CORS issue)");
+            
+            img.onload = () => {
+                // Show preview
+                const previewImg = document.getElementById('previewImg');
+                previewImg.src = img.src;
+                document.getElementById('imagePreview').classList.remove('hidden');
+                
+                // Generate art
+                renderArt(parseInt(document.getElementById('sizeSlider').value), parseInt(document.getElementById('intensitySlider').value));
+                document.getElementById('loadingIndicator').classList.add('hidden');
+            };
+            
+            img.onerror = () => {
+                showNotificationE("Failed to load image! Check the URL or try another image.");
+                document.getElementById('loadingIndicator').classList.add('hidden');
+            };
+            
             img.src = imageUrl;
         }
 
+        // Generate ASCII art from uploaded file or existing image
         function generateArt() {
             const fileInput = document.getElementById('imageInput');
-            const canvas = document.getElementById('canvas');
-            const ctx = canvas.getContext('2d');
             const sizeScale = parseInt(document.getElementById('sizeSlider').value);
             const intensityThreshold = parseInt(document.getElementById('intensitySlider').value);
 
+            // Show loading indicator
+            document.getElementById('loadingIndicator').classList.remove('hidden');
+
             if (fileInput.files.length === 0 && !img) {
-                showNotificationE("Load an image before generating!");
+                showNotificationE("Please upload an image or provide a URL first!");
+                document.getElementById('loadingIndicator').classList.add('hidden');
                 return;
             }
 
@@ -434,16 +361,27 @@
 
                 reader.onload = function(event) {
                     img = new Image();
-                    img.onload = () => renderArt(sizeScale, intensityThreshold);
+                    img.onload = () => {
+                        // Show preview
+                        const previewImg = document.getElementById('previewImg');
+                        previewImg.src = img.src;
+                        document.getElementById('imagePreview').classList.remove('hidden');
+                        
+                        // Generate art
+                        renderArt(sizeScale, intensityThreshold);
+                        document.getElementById('loadingIndicator').classList.add('hidden');
+                    };
                     img.src = event.target.result;
                 };
 
                 reader.readAsDataURL(file);
             } else if (img) {
                 renderArt(sizeScale, intensityThreshold);
+                document.getElementById('loadingIndicator').classList.add('hidden');
             }
         }
 
+        // Process image and generate ASCII art
         function renderArt(sizeScale, intensityThreshold) {
             const canvas = document.getElementById('canvas');
             const ctx = canvas.getContext('2d');
@@ -486,6 +424,7 @@
             document.getElementById("output").innerText = art;
         }
 
+        // Convert dot pattern to braille character
         function brailleFromPattern(pattern) {
             if (pattern === 0) {
                 return " ";
@@ -493,111 +432,87 @@
             return String.fromCharCode(0x2800 + pattern);
         }
 
+        // Copy functions for different formats
         function copyToClipboardCSS() {
             const art = document.getElementById("output").innerText;
             const commentArt = "/*\n" + art + "\n*/";
-
-            const tempTextarea = document.createElement("textarea");
-            tempTextarea.value = commentArt;
-            document.body.appendChild(tempTextarea);
-            tempTextarea.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempTextarea);
-
-            showNotificationS("Dot Art copied as comment!");
+            copyText(commentArt, "CSS comment");
         }
 
         function copyToClipboardHTML() {
             const art = document.getElementById("output").innerText;
             const commentArt = "<!--\n" + art + "\n-->";
-
-            const tempTextarea = document.createElement("textarea");
-            tempTextarea.value = commentArt;
-            document.body.appendChild(tempTextarea);
-            tempTextarea.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempTextarea);
-
-            showNotificationS("Dot Art copied as comment!");
+            copyText(commentArt, "HTML comment");
         }
 
         function copyToClipboardLUA() {
             const art = document.getElementById("output").innerText;
             const commentArt = "--[[\n" + art + "\n]]--";
-
-            const tempTextarea = document.createElement("textarea");
-            tempTextarea.value = commentArt;
-            document.body.appendChild(tempTextarea);
-            tempTextarea.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempTextarea);
-
-            showNotificationS("Dot Art copied as comment!");
+            copyText(commentArt, "Lua comment");
         }
 
         function copyToClipboardDART() {
             const art = document.getElementById("output").innerText;
             const commentArt = art.split('\n').map(line => '//   ' + line).join('\n');
-
-            const tempTextarea = document.createElement("textarea");
-            tempTextarea.value = commentArt;
-            document.body.appendChild(tempTextarea);
-            tempTextarea.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempTextarea);
-
-            showNotificationS("Dot Art copied as comment!");
+            copyText(commentArt, "Dart comment");
         }
 
         function copyToClipboardPYTHON() {
             const art = document.getElementById("output").innerText;
             const commentArt = art.split('\n').map(line => '#   ' + line).join('\n');
-
-            const tempTextarea = document.createElement("textarea");
-            tempTextarea.value = commentArt;
-            document.body.appendChild(tempTextarea);
-            tempTextarea.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempTextarea);
-
-            showNotificationS("Dot Art copied as comment!");
+            copyText(commentArt, "Python comment");
         }
 
         function copyToClipboardRAW() {
             const art = document.getElementById("output").innerText;
-
-            const tempTextarea = document.createElement("textarea");
-            tempTextarea.value = art;
-            document.body.appendChild(tempTextarea);
-            tempTextarea.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempTextarea);
-
-            showNotificationS("Dot Art copied as RAW!");
+            copyText(art, "raw text");
         }
 
+        // Helper function for copying text
+        function copyText(text, type) {
+            navigator.clipboard.writeText(text)
+                .then(() => showNotificationS(`ASCII art copied as ${type}!`))
+                .catch(() => {
+                    // Fallback for browsers that don't support clipboard API
+                    const tempTextarea = document.createElement("textarea");
+                    tempTextarea.value = text;
+                    document.body.appendChild(tempTextarea);
+                    tempTextarea.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(tempTextarea);
+                    showNotificationS(`ASCII art copied as ${type}!`);
+                });
+        }
 
-        // Handle file drop
+        // Handle file drop events
         const dropZone = document.getElementById('dropZone');
+        
         dropZone.addEventListener('dragover', (event) => {
             event.preventDefault();
-            dropZone.style.backgroundColor = '#4f375e';
+            dropZone.classList.add('bg-gray-700');
+            dropZone.classList.add('border-purple-500');
         });
 
         dropZone.addEventListener('dragleave', () => {
-            dropZone.style.backgroundColor = '';
+            dropZone.classList.remove('bg-gray-700');
+            dropZone.classList.remove('border-purple-500');
         });
 
         dropZone.addEventListener('drop', (event) => {
             event.preventDefault();
-            dropZone.style.backgroundColor = '';
+            dropZone.classList.remove('bg-gray-700');
+            dropZone.classList.remove('border-purple-500');
+            
             const file = event.dataTransfer.files[0];
-            if (file) {
+            if (file && file.type.startsWith('image/')) {
                 document.getElementById('imageInput').files = event.dataTransfer.files;
                 generateArt();
+            } else {
+                showNotificationE("Please drop a valid image file!");
             }
         });
 
+        // Update slider value displays
         function updateSizeValue(value) {
             document.getElementById('sizeValue').innerText = value;
         }
@@ -606,11 +521,10 @@
             document.getElementById('intensityValue').innerText = value;
         }
 
+        // Success notification
         function showNotificationS(message) {
             const notification = document.getElementById('notificationSuccess');
-
             notification.innerText = message;
-
             // Remove 'hidden' and fade in by changing the opacity to 100%
             notification.classList.remove('hidden');
             notification.classList.remove('opacity-0');
@@ -628,11 +542,10 @@
             }, 3000); // Notification stays for 3 seconds
         }
 
+        // Error notification
         function showNotificationE(message) {
             const notification = document.getElementById('notificationError');
-
             notification.innerText = message;
-
             // Remove 'hidden' and fade in by changing the opacity to 100%
             notification.classList.remove('hidden');
             notification.classList.remove('opacity-0');
