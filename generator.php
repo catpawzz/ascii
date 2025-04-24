@@ -63,7 +63,7 @@
                     Image to ASCII Art Generator
                 </h1>
                 <p class="mt-4 text-lg leading-8 text-gray-300 animate-fade animate-delay-500">Transform your images into beautiful dot patterns! All processing happens in your browser - no uploads needed.</p>
-                <p class="mt-2 text-purple-200 animate-fade animate-delay-500">v0.0.6 (05/01/2025)</p>
+                <p class="mt-2 text-purple-200 animate-fade animate-delay-500">v0.0.7 (24/04/2025)</p>
                 <div class="mt-6 flex items-center gap-x-6 animate-fade animate-delay-750">
                     <a href="/" class="rounded-md bg-purple-700 hover:bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400">
                         Home
@@ -242,13 +242,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <div class="mt-12 border-t border-gray-800">
-        <div class="container mx-auto px-4 py-8 text-center text-sm text-gray-500">
-            <p>Created by Catpawz © 2025</p>
-            <p class="mt-2">All processing happens in your browser - no images are uploaded to any server.</p>
-        </div>
-    </div>
 
     <canvas id="canvas"></canvas>
 
@@ -560,7 +553,7 @@
                 setTimeout(() => {
                     notification.classList.add('hidden');
                 }, 500);
-            }, 3000); // Notification stays for 3 seconds
+            }, 3000); 
         }
     </script>
 

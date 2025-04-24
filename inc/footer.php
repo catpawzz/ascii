@@ -6,7 +6,7 @@
                         <li><a href="https://github.com/catpawzz/ascii" class="text-purple-200 hover:text-purple-300">GitHub</a></li>
                         <li><a href="/generator" class="text-purple-200 hover:text-purple-300">Generator</a></li>
                     </ul>
-                    <span class="text-lg text-gray-100 text-center block">©<a href="https://catpawz.net/">French Femboi</a> 2024 - Present, All rights reserved.</span>
+                    <span class="text-lg text-gray-100 text-center block">©<a href="https://catpawz.net/">Catpawz</a> 2024 - Present, All rights reserved.</span>
             </div>
         </div>
     </footer>
